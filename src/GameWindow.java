@@ -1,14 +1,15 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
-import java.awt.event.WindowListener;
+import java.awt.event.*;
 
 /**
  * Created by duyanh on 10/11/17.
  */
 public class GameWindow extends JFrame{
     GameCanVas canvas;
+
+    long lastTimeUpdate;
+
     public GameWindow(){
         this.setSize(800,600);
 
@@ -25,10 +26,46 @@ public class GameWindow extends JFrame{
         this.setResizable(false);
        // this.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
 
+        this.addKeyListener(new KeyListener() {
+            @Override
+            public void keyTyped(KeyEvent e) {
+
+            }
+
+            @Override
+            public void keyPressed(KeyEvent e) {
+                canvas.keyPressed(e);
+            }
+
+            @Override
+            public void keyReleased(KeyEvent e) {
+                canvas.keyReleased(e);
+            }
+        });
+
         this.setContentPane(this.canvas);
         this.setVisible(true);
+        lastTimeUpdate = System.nanoTime();
 
 
+    }
+    /**
+     * fps = 60 (frame per second) -> delta t = 1/60 = 17ms
+     */
+    public void gameLoop(){
+        while(true){
+
+                long currentTime = System.nanoTime();
+
+                if(currentTime - lastTimeUpdate >= 17000000){
+                    canvas.run();
+                    canvas.render();
+                    lastTimeUpdate = currentTime;
+                }
+
+
+
+        }
     }
 
 
