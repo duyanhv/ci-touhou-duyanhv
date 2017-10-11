@@ -11,6 +11,7 @@ import java.io.IOException;
 public class GameCanVas extends JPanel{
 
     BufferedImage background;
+    BufferedImage player;
 
 
     public GameCanVas(){
@@ -18,9 +19,13 @@ public class GameCanVas extends JPanel{
         //1. Load Background
         try {
             background = ImageIO.read(new File("assets/images/background/0.png"));
+
+
+            player = ImageIO.read(new File("assets/images/players/straight/0.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
+
     }
 
     //2. Draw Background
@@ -28,7 +33,7 @@ public class GameCanVas extends JPanel{
 
     @Override
     protected void paintComponent(Graphics g) {
-        super.paintComponent(g);
-        
+        g.drawImage(background,0,0,null);
+        g.drawImage(player,182,500,null);
     }
 }
