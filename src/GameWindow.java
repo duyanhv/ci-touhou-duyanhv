@@ -14,5 +14,11 @@ public class GameWindow extends JFrame{
         this.canvas = new GameCanVas();
         this.setContentPane(this.canvas);
 
+
+    }
+
+    public void gameLoop(){
+
+        this.canvas.repaint();
     }
 }
