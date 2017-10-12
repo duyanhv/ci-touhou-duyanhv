@@ -52,7 +52,7 @@ public class GameCanVas extends JPanel{
             player = ImageIO.read(new File("assets/images/players/straight/0.png"));
 
 
-            enemy1 = ImageIO.read(new File("assets/images/enemies/bullets/blue.png"));
+            enemy1 = ImageIO.read(new File("assets/images/players/straight/5.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -144,7 +144,7 @@ public class GameCanVas extends JPanel{
 
 
         if(enemy1Y <= 1000){
-            vy += 5;
+            vy += 2;
         }
 
 
