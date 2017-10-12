@@ -13,9 +13,17 @@ public class GameCanVas extends JPanel{
 
     BufferedImage background;
     BufferedImage player;
+    BufferedImage enemy1;
+
 
     int playerX =  182;
     int playerY = 500;
+
+    int backGroundX = 0;
+    int backGroundY = -2500;
+
+    int enemy1X = 100;
+    int enemy1Y = 0;
 
     boolean rightPressed;
     boolean leftPressed;
@@ -42,6 +50,9 @@ public class GameCanVas extends JPanel{
 
 
             player = ImageIO.read(new File("assets/images/players/straight/0.png"));
+
+
+            enemy1 = ImageIO.read(new File("assets/images/enemies/bullets/blue.png"));
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -51,8 +62,9 @@ public class GameCanVas extends JPanel{
     public void render(){
         //1. Draw everything on back buffer
 
-        backGraphics.drawImage(background,0,-2500,null);
+        backGraphics.drawImage(background,backGroundX,backGroundY,null);
         backGraphics.drawImage(player,playerX,playerY,null);
+        backGraphics.drawImage(enemy1,enemy1X, enemy1Y,null);
 
         //2. Call repaint
 
@@ -69,6 +81,7 @@ public class GameCanVas extends JPanel{
 
 
     public void keyPressed(KeyEvent e) {
+
         if(e.getKeyCode() == KeyEvent.VK_RIGHT){
             rightPressed = true;
 
@@ -113,6 +126,33 @@ public class GameCanVas extends JPanel{
             downPressed = false;
         }
     }
+    public void runBackground(){
+        int vy = 0;
+
+        if(backGroundY < 100){
+            vy += 3;
+//            System.out.println("vy = 3");
+        }
+        backGroundY += vy;
+    }
+
+    public void runEnemies(){
+        int vx = 0;
+        int vy = 0;
+
+
+
+
+        if(enemy1Y <= 1000){
+            vy += 5;
+        }
+
+
+        enemy1Y += vy;
+
+    }
+
+
 
     public void run(){
 
@@ -125,23 +165,34 @@ public class GameCanVas extends JPanel{
         int vx = 0;
         int vy = 0;
 
-        if(rightPressed){
-            vx += 5;
+
+        if(playerX <= 355){
+            if(rightPressed){
+                vx += 5;
+            }
+
         }
 
-        if(leftPressed){
-            vx -= 5;
+
+        if(playerX > 0){
+            if(leftPressed){
+                vx -= 5;
+            }
         }
 
         playerX += vx;
 
 
-        if(upPressed){
-            vy -= 5;
+        if(playerY > 0){
+            if(upPressed){
+                vy -= 5;
+            }
         }
 
-        if(downPressed){
-            vy += 5;
+        if(playerY < 530){
+            if(downPressed){
+                vy += 5;
+            }
         }
 
         playerY += vy;

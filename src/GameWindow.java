@@ -58,6 +58,8 @@ public class GameWindow extends JFrame{
                 long currentTime = System.nanoTime();
 
                 if(currentTime - lastTimeUpdate >= 17000000){
+                    canvas.runBackground();
+                    canvas.runEnemies();
                     canvas.run();
                     canvas.render();
                     lastTimeUpdate = currentTime;
