@@ -1,3 +1,6 @@
+import touhou.Player;
+import touhou.PlayerSpell;
+
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
@@ -5,19 +8,27 @@ import java.awt.event.KeyEvent;
 import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
+import java.util.ArrayList;
+
+import static java.awt.event.KeyEvent.VK_X;
 
 /**
- * Created by duyanh on 10/11/17.
+ *  int playerX, playerY
+ *  boolean rightPressed, leftPressed, upPressed, downPressed
+ *  final int SPEED
+ *  void keyPressed, void keyRelease
+ *
  */
 public class GameCanVas extends JPanel{
 
     BufferedImage background;
-    BufferedImage player;
     BufferedImage enemy1;
 
+    Player player = new Player();
+//    PlayerSpell playerSpell; // = null
+    ArrayList<PlayerSpell> spells = new ArrayList<>();
 
-    int playerX =  182;
-    int playerY = 500;
+
 
     int backGroundX = 0;
     int backGroundY = -2500;
@@ -25,15 +36,13 @@ public class GameCanVas extends JPanel{
     int enemy1X = 100;
     int enemy1Y = 0;
 
-    boolean rightPressed;
-    boolean leftPressed;
-    boolean upPressed;
-    boolean downPressed;
+
 
     BufferedImage backBuffer;
     Graphics backGraphics;
 
 
+    final int backGroundSPEED = 3;
 
     public GameCanVas(){
         //0. CREATE BACK BUFFER
@@ -49,7 +58,7 @@ public class GameCanVas extends JPanel{
             background = ImageIO.read(new File("assets/images/background/0.png"));
 
 
-            player = ImageIO.read(new File("assets/images/players/straight/0.png"));
+
 
 
             enemy1 = ImageIO.read(new File("assets/images/players/straight/5.png"));
@@ -63,12 +72,45 @@ public class GameCanVas extends JPanel{
         //1. Draw everything on back buffer
 
         backGraphics.drawImage(background,backGroundX,backGroundY,null);
-        backGraphics.drawImage(player,playerX,playerY,null);
+
+        player.render(backGraphics);
+
+        for(PlayerSpell spell: spells){
+            spell.render(backGraphics);
+        }
+
         backGraphics.drawImage(enemy1,enemy1X, enemy1Y,null);
 
         //2. Call repaint
 
         repaint();
+    }
+
+    public void keyPressed(KeyEvent e){
+        player.keyPressed(e);
+
+
+
+//        playerSpell.KeyPressed(e);
+    }
+
+    public void keyReleased(KeyEvent e){
+        player.keyReleased(e);
+
+
+//        playerSpell.KeyReleased(e);
+    }
+
+    public void run(){
+        player.run();
+
+        player.shoot(spells);
+
+        for(PlayerSpell spell : spells){
+            spell.run();
+        }
+
+
     }
 
     //2. Draw Background
@@ -80,57 +122,12 @@ public class GameCanVas extends JPanel{
     }
 
 
-    public void keyPressed(KeyEvent e) {
 
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            rightPressed = true;
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            leftPressed = true;
-
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            upPressed = true;
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            downPressed = true;
-        }
-
-    }
-
-
-    public void keyReleased(KeyEvent e) {
-        if(e.getKeyCode() == KeyEvent.VK_RIGHT){
-            rightPressed = false;
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_LEFT){
-            leftPressed = false;
-
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_UP){
-            upPressed = false;
-
-        }
-
-        if(e.getKeyCode() == KeyEvent.VK_DOWN){
-            downPressed = false;
-        }
-    }
     public void runBackground(){
         int vy = 0;
 
         if(backGroundY < 100){
-            vy += 3;
+            vy += backGroundSPEED;
 //            System.out.println("vy = 3");
         }
         backGroundY += vy;
@@ -154,47 +151,5 @@ public class GameCanVas extends JPanel{
 
 
 
-    public void run(){
 
-        /**
-         * A' = A + v
-         * (x',y') = (x,y) + (vx,vy)
-         * x' = x+vx
-         * y' = y+vy
-         */
-        int vx = 0;
-        int vy = 0;
-
-
-        if(playerX <= 355){
-            if(rightPressed){
-                vx += 5;
-            }
-
-        }
-
-
-        if(playerX > 0){
-            if(leftPressed){
-                vx -= 5;
-            }
-        }
-
-        playerX += vx;
-
-
-        if(playerY > 0){
-            if(upPressed){
-                vy -= 5;
-            }
-        }
-
-        if(playerY < 530){
-            if(downPressed){
-                vy += 5;
-            }
-        }
-
-        playerY += vy;
-    }
 }
