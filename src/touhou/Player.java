@@ -17,6 +17,7 @@ import static java.awt.event.KeyEvent.VK_X;
 public class Player {
     BufferedImage image;
     Utils utils = new Utils();
+    Enemies enemies = new Enemies();
 
     public int x =  182;
     public int y = 500;
@@ -30,7 +31,7 @@ public class Player {
     final int SPEED = 5;
 
     final int LEFT = 0;
-    final int RIGHT = 384;
+    final int RIGHT = 360;
     final int TOP = 0;
     final int BOTTOM = 530;
 
@@ -147,14 +148,26 @@ public class Player {
 
         x = (int) Utils.clamp(x,LEFT,RIGHT);
         y = (int) Utils.clamp(y,TOP,BOTTOM);
+
     }
 
     public void shoot(ArrayList<PlayerSpell> spells){
         if(xPressed){
-            PlayerSpell newSpell = new PlayerSpell();
-            newSpell.x = x;
-            newSpell.y = y;
-            spells.add(newSpell);
+
+            try {
+                Thread.sleep(17);
+
+                PlayerSpell newSpell = new PlayerSpell();
+                newSpell.x = x;
+                newSpell.y = y;
+                spells.add(newSpell);
+                xPressed = false;
+
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+
+
         }
     }
 

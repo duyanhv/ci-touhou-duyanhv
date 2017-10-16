@@ -1,3 +1,5 @@
+import touhou.Enemies;
+import touhou.EnemiesSpell;
 import touhou.Player;
 import touhou.PlayerSpell;
 
@@ -22,19 +24,21 @@ import static java.awt.event.KeyEvent.VK_X;
 public class GameCanVas extends JPanel{
 
     BufferedImage background;
-    BufferedImage enemy1;
+
 
     Player player = new Player();
+    Enemies enemies = new Enemies();
 //    PlayerSpell playerSpell; // = null
     ArrayList<PlayerSpell> spells = new ArrayList<>();
+
+    ArrayList<EnemiesSpell> enemSpells = new ArrayList<>();
 
 
 
     int backGroundX = 0;
     int backGroundY = -2500;
 
-    int enemy1X = 100;
-    int enemy1Y = 0;
+
 
 
 
@@ -61,7 +65,7 @@ public class GameCanVas extends JPanel{
 
 
 
-            enemy1 = ImageIO.read(new File("assets/images/players/straight/5.png"));
+
         } catch (IOException e) {
             e.printStackTrace();
         }
@@ -79,7 +83,12 @@ public class GameCanVas extends JPanel{
             spell.render(backGraphics);
         }
 
-        backGraphics.drawImage(enemy1,enemy1X, enemy1Y,null);
+        enemies.render(backGraphics);
+//
+//        for(EnemiesSpell spell: enemSpells){
+//            spell.render(backGraphics);
+//        }
+
 
         //2. Call repaint
 
@@ -103,12 +112,20 @@ public class GameCanVas extends JPanel{
 
     public void run(){
         player.run();
+        enemies.run();
 
         player.shoot(spells);
 
         for(PlayerSpell spell : spells){
             spell.run();
         }
+
+        enemies.shoot(enemSpells);
+
+        for(EnemiesSpell spell : enemSpells){
+            spell.run();
+        }
+
 
 
     }
@@ -133,21 +150,7 @@ public class GameCanVas extends JPanel{
         backGroundY += vy;
     }
 
-    public void runEnemies(){
-        int vx = 0;
-        int vy = 0;
 
-
-
-
-        if(enemy1Y <= 1000){
-            vy += 2;
-        }
-
-
-        enemy1Y += vy;
-
-    }
 
 
 

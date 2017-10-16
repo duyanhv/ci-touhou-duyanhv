@@ -59,7 +59,7 @@ public class GameWindow extends JFrame{
 
                 if(currentTime - lastTimeUpdate >= 17000000){
                     canvas.runBackground();
-                    canvas.runEnemies();
+
                     canvas.run();
                     canvas.render();
                     lastTimeUpdate = currentTime;
