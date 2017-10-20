@@ -1,5 +1,6 @@
 package touhou;
 
+import bases.GameObject;
 import bases.Utils;
 
 import java.awt.*;
@@ -9,13 +10,13 @@ import java.awt.image.BufferedImage;
 /**
  * Created by duyanh on 10/14/17.
  */
-public class PlayerSpell {
-    BufferedImage image;
+public class PlayerSpell extends GameObject{
+//    BufferedImage image;
     Player player = new Player();
     Utils utils = new Utils();
-
-    public int x;
-    public int y;
+//
+//    public int x;
+//    public int y;
 
     final int SPEED = 10;
 
@@ -31,10 +32,10 @@ public class PlayerSpell {
         image = Utils.loadImage("assets/images/player-bullets/a/0.png");
     }
 
-    public void render(Graphics graphics){
-
-        graphics.drawImage(image,x,y, null);
-    }
+//    public void render(Graphics graphics){
+//
+//        graphics.drawImage(image,x,y, null);
+//    }
 
 //    public void KeyPressed(KeyEvent e){
 //        if(e.getKeyCode() == KeyEvent.VK_SPACE){
@@ -53,7 +54,7 @@ public class PlayerSpell {
         int vy = 0;
 
 
-            vy -= SPEED;
+        vy -= SPEED;
 
 
         y += vy;

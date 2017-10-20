@@ -1,3 +1,4 @@
+import bases.GameObject;
 import touhou.Enemies;
 import touhou.EnemiesSpell;
 import touhou.Player;
@@ -29,14 +30,14 @@ public class GameCanVas extends JPanel{
     Player player = new Player();
     Enemies enemies = new Enemies();
 //    PlayerSpell playerSpell; // = null
-    ArrayList<PlayerSpell> spells = new ArrayList<>();
+//    ArrayList<PlayerSpell> spells = new ArrayList<>();
 
     ArrayList<EnemiesSpell> enemSpells = new ArrayList<>();
 
 
 
     int backGroundX = 0;
-    int backGroundY = -2500;
+    int backGroundY = -2540;
 
 
 
@@ -46,7 +47,7 @@ public class GameCanVas extends JPanel{
     Graphics backGraphics;
 
 
-    final int backGroundSPEED = 3;
+    final int backGroundSPEED = 8;
 
     public GameCanVas(){
         //0. CREATE BACK BUFFER
@@ -70,6 +71,9 @@ public class GameCanVas extends JPanel{
             e.printStackTrace();
         }
 
+        GameObject.add(player);
+        GameObject.add(enemies);
+
     }
 
     public void render(){
@@ -77,13 +81,15 @@ public class GameCanVas extends JPanel{
 
         backGraphics.drawImage(background,backGroundX,backGroundY,null);
 
-        player.render(backGraphics);
+//        player.render(backGraphics);
+//
+//        for(PlayerSpell spell: spells){
+//            spell.render(backGraphics);
+//        }
+//
+//        enemies.render(backGraphics);
 
-        for(PlayerSpell spell: spells){
-            spell.render(backGraphics);
-        }
-
-        enemies.render(backGraphics);
+        GameObject.renderAll(backGraphics);
 //
 //        for(EnemiesSpell spell: enemSpells){
 //            spell.render(backGraphics);
@@ -111,22 +117,22 @@ public class GameCanVas extends JPanel{
     }
 
     public void run(){
-        player.run();
-        enemies.run();
+//        player.run();
+//        enemies.run();
+//
+//        player.shoot(spells);
+//
+//        for(PlayerSpell spell : spells){
+//            spell.run();
+//        }
+//
+//        enemies.shoot(enemSpells);
+//
+//        for(EnemiesSpell spell : enemSpells){
+//            spell.run();
+//        }
 
-        player.shoot(spells);
-
-        for(PlayerSpell spell : spells){
-            spell.run();
-        }
-
-        enemies.shoot(enemSpells);
-
-        for(EnemiesSpell spell : enemSpells){
-            spell.run();
-        }
-
-
+        GameObject.runAll();
 
     }
 
@@ -143,11 +149,21 @@ public class GameCanVas extends JPanel{
     public void runBackground(){
         int vy = 0;
 
-        if(backGroundY < 100){
+        if(backGroundY < 200){
             vy += backGroundSPEED;
+
+            if(backGroundY == 180){
+                backGroundY = -2540;
+//                System.out.println("0");
+            }
+
 //            System.out.println("vy = 3");
         }
+
         backGroundY += vy;
+//        System.out.println(""+backGroundY);
+
+
     }
 
 
