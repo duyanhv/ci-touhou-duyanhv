@@ -1,11 +1,10 @@
-package touhou;
+package touhou.players;
 
 import bases.GameObject;
 import bases.Utils;
-
-import java.awt.*;
-import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
+import bases.Vector2D;
+import bases.physics.BoxCollider;
+import touhou.enemies.Enemy;
 
 /**
  * Created by duyanh on 10/14/17.
@@ -18,6 +17,7 @@ public class PlayerSpell extends GameObject{
 //    public int x;
 //    public int y;
 
+
     final int SPEED = 10;
 
     final int LEFT = 0;
@@ -27,8 +27,11 @@ public class PlayerSpell extends GameObject{
 
     boolean spacePressed;
 
+    public BoxCollider boxCollider;
+
 
     public PlayerSpell(){
+        boxCollider = new BoxCollider(20,20);
         image = Utils.loadImage("assets/images/player-bullets/a/0.png");
     }
 
@@ -49,17 +52,19 @@ public class PlayerSpell extends GameObject{
 //            spacePressed = true;
 //        }
 //    }
-
     public void run(){
-        int vy = 0;
 
 
-        vy -= SPEED;
+        position.subtractBy(0,SPEED);
 
+        boxCollider.position.set(this.position);
 
-        y += vy;
+        Enemy enemy = GameObject.collideWith(this.boxCollider);
 
-
+        if(enemy != null){
+            enemy.getHit();
+            this.isActive = false;
+        }
     }
 
 

@@ -1,8 +1,8 @@
 import bases.GameObject;
-import touhou.Enemies;
-import touhou.EnemiesSpell;
-import touhou.Player;
-import touhou.PlayerSpell;
+import touhou.enemies.Enemy;
+import touhou.enemies.EnemiesSpell;
+import touhou.enemies.EnemySpawner;
+import touhou.players.Player;
 
 import javax.imageio.ImageIO;
 import javax.swing.*;
@@ -12,8 +12,6 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
-
-import static java.awt.event.KeyEvent.VK_X;
 
 /**
  *  int playerX, playerY
@@ -28,7 +26,6 @@ public class GameCanVas extends JPanel{
 
 
     Player player = new Player();
-    Enemies enemies = new Enemies();
 //    PlayerSpell playerSpell; // = null
 //    ArrayList<PlayerSpell> spells = new ArrayList<>();
 
@@ -47,7 +44,7 @@ public class GameCanVas extends JPanel{
     Graphics backGraphics;
 
 
-    final int backGroundSPEED = 8;
+    final int backGroundSPEED = 3;
 
     public GameCanVas(){
         //0. CREATE BACK BUFFER
@@ -72,7 +69,7 @@ public class GameCanVas extends JPanel{
         }
 
         GameObject.add(player);
-        GameObject.add(enemies);
+        GameObject.add(new EnemySpawner());
 
     }
 
@@ -87,7 +84,7 @@ public class GameCanVas extends JPanel{
 //            spell.render(backGraphics);
 //        }
 //
-//        enemies.render(backGraphics);
+//        enemy.render(backGraphics);
 
         GameObject.renderAll(backGraphics);
 //
@@ -118,7 +115,7 @@ public class GameCanVas extends JPanel{
 
     public void run(){
 //        player.run();
-//        enemies.run();
+//        enemy.run();
 //
 //        player.shoot(spells);
 //
@@ -126,7 +123,7 @@ public class GameCanVas extends JPanel{
 //            spell.run();
 //        }
 //
-//        enemies.shoot(enemSpells);
+//        enemy.shoot(enemSpells);
 //
 //        for(EnemiesSpell spell : enemSpells){
 //            spell.run();

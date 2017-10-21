@@ -1,4 +1,4 @@
-package touhou;
+package touhou.enemies;
 
 import bases.GameObject;
 import bases.Utils;
@@ -29,10 +29,9 @@ public class EnemiesSpell extends GameObject{
 //    }
 
     public void run(){
-        int vy = 0;
 
-        vy += SPEED;
 
-        y += vy;
+        this.position.addUp(0, SPEED);
+
     }
 }

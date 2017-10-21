@@ -1,14 +1,11 @@
-package touhou;
+package touhou.players;
 
 import bases.GameObject;
 import bases.Utils;
+import bases.Vector2D;
+import touhou.enemies.Enemy;
 
-import javax.imageio.ImageIO;
-import java.awt.*;
 import java.awt.event.KeyEvent;
-import java.awt.image.BufferedImage;
-import java.io.File;
-import java.util.ArrayList;
 
 import static java.awt.event.KeyEvent.VK_X;
 
@@ -18,7 +15,7 @@ import static java.awt.event.KeyEvent.VK_X;
 public class Player extends GameObject{
 //    BufferedImage image;
     Utils utils = new Utils();
-    Enemies enemies = new Enemies();
+    Enemy enemy = new Enemy();
 
 //    public int x =  182;
 //    public int y = 500;
@@ -32,7 +29,7 @@ public class Player extends GameObject{
     final int SPEED = 5;
 
     final int LEFT = 0;
-    final int RIGHT = 360;
+    final int RIGHT = 384;
     final int TOP = 0;
     final int BOTTOM = 530;
 
@@ -41,8 +38,9 @@ public class Player extends GameObject{
     int coolDownCount;
 
     public Player(){
-        x = 182;
-        y = 500;
+//        x = 182;
+//        y = 500;
+        position.set(182,500);
         image = Utils.loadImage("assets/images/players/straight/0.png");
 
         spellDisabled = false;
@@ -118,6 +116,8 @@ public class Player extends GameObject{
 
     }
 
+    Vector2D velocity = new Vector2D();
+
     private void move() {
 
         /**
@@ -127,13 +127,12 @@ public class Player extends GameObject{
          * y' = y+vy
          */
 
-        int vx = 0;
-        int vy = 0;
+        velocity.set(0,0);
 
 
 
         if(rightPressed){
-            vx += SPEED;
+            velocity.x += SPEED;
         }
 
 
@@ -141,7 +140,7 @@ public class Player extends GameObject{
 
 
         if(leftPressed){
-            vx -= SPEED;
+            velocity.x -= SPEED;
         }
 
 
@@ -150,22 +149,21 @@ public class Player extends GameObject{
 
 
         if(upPressed){
-            vy -= SPEED;
+            velocity.y -= SPEED;
         }
 
 
 
         if(downPressed){
-            vy += SPEED;
+            velocity.y += SPEED;
         }
 
 
-        x += vx;
-        y += vy;
+        position.addUp(velocity);
 
 
-        x = (int) Utils.clamp(x,LEFT,RIGHT);
-        y = (int) Utils.clamp(y,TOP,BOTTOM);
+        position.x = (int) Utils.clamp(position.x,LEFT,RIGHT);
+        position.y = (int) Utils.clamp(position.y,TOP,BOTTOM);
     }
 
 
@@ -182,8 +180,7 @@ public class Player extends GameObject{
 
 
             PlayerSpell newSpell = new PlayerSpell();
-                newSpell.x = x;
-                newSpell.y = y;
+                newSpell.position.set(position.x, position.y - 14);
                 GameObject.add(newSpell);
 
                 spellDisabled = true;
