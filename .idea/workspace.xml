@@ -2,24 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e4bfefa3-2bd5-43e6-bc0f-a279abaa8690" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bases/FrameCounter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/bases/physics/BoxCollider.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/touhou/Enemies.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/touhou/EnemiesSpell.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/touhou/Player.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/touhou/PlayerSpell.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/touhou/Enemies.java" afterPath="$PROJECT_DIR$/src/touhou/enemies/Enemy.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/touhou/EnemiesSpell.java" afterPath="$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/touhou/Player.java" afterPath="$PROJECT_DIR$/src/touhou/players/Player.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/touhou/PlayerSpell.java" afterPath="$PROJECT_DIR$/src/touhou/players/PlayerSpell.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/GameCanVas.class" afterPath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/GameCanVas.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/bases/GameObject.class" afterPath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/bases/GameObject.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/bases/Vector2D.class" afterPath="$PROJECT_DIR$/out/production/ci-touhou-duyanhv/bases/Vector2D.class" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/GameCanVas.java" afterPath="$PROJECT_DIR$/src/GameCanVas.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/GameObject.java" afterPath="$PROJECT_DIR$/src/bases/GameObject.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/bases/Vector2D.java" afterPath="$PROJECT_DIR$/src/bases/Vector2D.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java" afterPath="$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java" afterPath="$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/touhou/players/Player.java" afterPath="$PROJECT_DIR$/src/touhou/players/Player.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/touhou/players/PlayerSpell.java" afterPath="$PROJECT_DIR$/src/touhou/players/PlayerSpell.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -32,30 +19,11 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="Vector2D.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/Vector2D.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
-              <folding>
-                <element signature="e#403#404#0" expanded="true" />
-                <element signature="e#450#451#0" expanded="true" />
-                <element signature="e#1138#1139#0" expanded="true" />
-                <element signature="e#1188#1189#0" expanded="true" />
-                <element signature="e#1241#1242#0" expanded="true" />
-                <element signature="e#1300#1301#0" expanded="true" />
-                <element signature="e#1620#1621#0" expanded="true" />
-                <element signature="e#1674#1675#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="EnemiesSpell.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="318">
-              <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state relative-caret-position="220">
+              <caret line="39" column="42" lean-forward="false" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -63,38 +31,25 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="false">
+      <file leaf-file-name="PlayerSpell.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/touhou/players/PlayerSpell.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="317">
+              <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="GameObject.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-99">
-              <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+            <state relative-caret-position="615">
+              <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
               <folding>
                 <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EnemySpawner.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="FrameCounter.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
-              <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
-              <folding>
-                <element signature="e#412#413#0" expanded="true" />
-                <element signature="e#437#438#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -103,7 +58,7 @@
       <file leaf-file-name="GameCanVas.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/GameCanVas.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-231">
+            <state relative-caret-position="17">
               <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -115,12 +70,10 @@
       <file leaf-file-name="Enemy.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/touhou/enemies/Enemy.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="554">
-              <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+            <state relative-caret-position="-567">
+              <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#1364#1365#0" expanded="true" />
-                <element signature="e#1404#1405#0" expanded="true" />
                 <element signature="e#1432#1433#0" expanded="true" />
                 <element signature="e#1464#1465#0" expanded="true" />
                 <element signature="e#1467#1504#0" expanded="false" />
@@ -132,12 +85,18 @@
       <file leaf-file-name="Player.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/touhou/players/Player.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-2459">
-              <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
+            <state relative-caret-position="-600">
+              <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#966#1010#0" expanded="false" />
-                <element signature="e#3298#3317#0" expanded="false" />
+                <element signature="e#1087#1131#0" expanded="false" />
+                <element signature="method#keyPressed#0;class#Player#0" expanded="false" />
+                <element signature="method#keyReleased#0;class#Player#0" expanded="false" />
+                <element signature="e#2334#2335#0" expanded="true" />
+                <element signature="e#2366#2367#0" expanded="true" />
+                <element signature="method#move#0;class#Player#0" expanded="false" />
+                <element signature="method#shoot#0;class#Player#0" expanded="false" />
+                <element signature="e#3526#3545#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -146,30 +105,9 @@
       <file leaf-file-name="BoxCollider.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/bases/physics/BoxCollider.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-              <folding>
-                <element signature="e#372#373#0" expanded="true" />
-                <element signature="e#417#418#0" expanded="true" />
-                <element signature="e#444#445#0" expanded="true" />
-                <element signature="e#489#490#0" expanded="true" />
-                <element signature="e#514#515#0" expanded="true" />
-                <element signature="e#559#560#0" expanded="true" />
-                <element signature="e#587#588#0" expanded="true" />
-                <element signature="e#632#633#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="PlayerSpell.java" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/touhou/players/PlayerSpell.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="379">
-              <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
-              <folding>
-                <element signature="imports" expanded="true" />
-              </folding>
+            <state relative-caret-position="306">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -209,14 +147,14 @@
         <option value="$PROJECT_DIR$/src/touhou/Enemies.java" />
         <option value="$PROJECT_DIR$/src/bases/FrameCounter.java" />
         <option value="$PROJECT_DIR$/src/bases/Vector2D.java" />
-        <option value="$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java" />
-        <option value="$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java" />
         <option value="$PROJECT_DIR$/src/GameCanVas.java" />
-        <option value="$PROJECT_DIR$/src/touhou/players/Player.java" />
         <option value="$PROJECT_DIR$/src/bases/physics/BoxCollider.java" />
-        <option value="$PROJECT_DIR$/src/bases/GameObject.java" />
         <option value="$PROJECT_DIR$/src/touhou/enemies/Enemy.java" />
         <option value="$PROJECT_DIR$/src/touhou/players/PlayerSpell.java" />
+        <option value="$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java" />
+        <option value="$PROJECT_DIR$/src/touhou/players/Player.java" />
+        <option value="$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java" />
+        <option value="$PROJECT_DIR$/src/bases/GameObject.java" />
       </list>
     </option>
   </component>
@@ -242,6 +180,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -346,8 +286,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -672,8 +610,14 @@
           <caret line="99" column="5" lean-forward="true" selection-start-line="99" selection-start-column="5" selection-end-line="99" selection-end-column="5" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#966#1010#0" expanded="false" />
-            <element signature="e#3298#3317#0" expanded="false" />
+            <element signature="e#1087#1131#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#Player#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#Player#0" expanded="false" />
+            <element signature="e#2334#2335#0" expanded="true" />
+            <element signature="e#2366#2367#0" expanded="true" />
+            <element signature="method#move#0;class#Player#0" expanded="false" />
+            <element signature="method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#3526#3545#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -880,22 +824,7 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/player-bullets/a/0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/images/player-bullets/a/2.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/players/straight/0.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/assets/images/enemies/bullets/blue.png">
       <provider selected="true" editor-type-id="images">
         <state />
       </provider>
@@ -937,8 +866,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/Vector2D.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="28" column="0" lean-forward="true" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
+        <state relative-caret-position="442">
+          <caret line="28" column="0" lean-forward="false" selection-start-line="28" selection-start-column="0" selection-end-line="28" selection-end-column="0" />
           <folding>
             <element signature="e#403#404#0" expanded="true" />
             <element signature="e#450#451#0" expanded="true" />
@@ -952,64 +881,53 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java">
+    <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="34" column="0" lean-forward="true" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="187">
+          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+          <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/FrameCounter.java">
+    <entry file="file://$PROJECT_DIR$/assets/images/players/straight/0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/enemies/bullets/blue.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/assets/images/player-bullets/a/0.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="11" column="33" lean-forward="false" selection-start-line="11" selection-start-column="33" selection-end-line="11" selection-end-column="33" />
+        <state relative-caret-position="374">
+          <caret line="22" column="8" lean-forward="false" selection-start-line="22" selection-start-column="8" selection-end-line="22" selection-end-column="8" />
           <folding>
-            <element signature="e#412#413#0" expanded="true" />
-            <element signature="e#437#438#0" expanded="true" />
+            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/bases/physics/BoxCollider.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="5" column="33" lean-forward="true" selection-start-line="5" selection-start-column="33" selection-end-line="5" selection-end-column="33" />
-          <folding>
-            <element signature="e#372#373#0" expanded="true" />
-            <element signature="e#417#418#0" expanded="true" />
-            <element signature="e#444#445#0" expanded="true" />
-            <element signature="e#489#490#0" expanded="true" />
-            <element signature="e#514#515#0" expanded="true" />
-            <element signature="e#559#560#0" expanded="true" />
-            <element signature="e#587#588#0" expanded="true" />
-            <element signature="e#632#633#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/touhou/players/Player.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-2459">
-          <caret line="14" column="13" lean-forward="false" selection-start-line="14" selection-start-column="13" selection-end-line="14" selection-end-column="13" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#966#1010#0" expanded="false" />
-            <element signature="e#3298#3317#0" expanded="false" />
-          </folding>
+        <state relative-caret-position="306">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/touhou/enemies/Enemy.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="554">
-          <caret line="72" column="25" lean-forward="false" selection-start-line="72" selection-start-column="25" selection-end-line="72" selection-end-column="25" />
+        <state relative-caret-position="-567">
+          <caret line="11" column="3" lean-forward="true" selection-start-line="11" selection-start-column="3" selection-end-line="11" selection-end-column="3" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#1364#1365#0" expanded="true" />
-            <element signature="e#1404#1405#0" expanded="true" />
             <element signature="e#1432#1433#0" expanded="true" />
             <element signature="e#1464#1465#0" expanded="true" />
             <element signature="e#1467#1504#0" expanded="false" />
@@ -1019,7 +937,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/GameCanVas.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-231">
+        <state relative-caret-position="17">
           <caret line="46" column="33" lean-forward="false" selection-start-line="46" selection-start-column="33" selection-end-line="46" selection-end-column="33" />
           <folding>
             <element signature="imports" expanded="true" />
@@ -1027,10 +945,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+    <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemiesSpell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-99">
-          <caret line="49" column="48" lean-forward="false" selection-start-line="49" selection-start-column="48" selection-end-line="49" selection-end-column="48" />
+        <state relative-caret-position="220">
+          <caret line="39" column="42" lean-forward="false" selection-start-line="39" selection-start-column="42" selection-end-line="39" selection-end-column="42" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1039,18 +957,36 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/touhou/players/PlayerSpell.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="379">
-          <caret line="65" column="34" lean-forward="false" selection-start-line="65" selection-start-column="34" selection-end-line="65" selection-end-column="34" />
+        <state relative-caret-position="317">
+          <caret line="64" column="34" lean-forward="true" selection-start-line="64" selection-start-column="34" selection-end-line="64" selection-end-column="34" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/touhou/enemies/EnemySpawner.java">
+    <entry file="file://$PROJECT_DIR$/src/touhou/players/Player.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="26" column="30" lean-forward="false" selection-start-line="26" selection-start-column="30" selection-end-line="26" selection-end-column="30" />
+        <state relative-caret-position="-600">
+          <caret line="19" column="13" lean-forward="false" selection-start-line="19" selection-start-column="13" selection-end-line="19" selection-end-column="13" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1087#1131#0" expanded="false" />
+            <element signature="method#keyPressed#0;class#Player#0" expanded="false" />
+            <element signature="method#keyReleased#0;class#Player#0" expanded="false" />
+            <element signature="e#2334#2335#0" expanded="true" />
+            <element signature="e#2366#2367#0" expanded="true" />
+            <element signature="method#move#0;class#Player#0" expanded="false" />
+            <element signature="method#shoot#0;class#Player#0" expanded="false" />
+            <element signature="e#3526#3545#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/bases/GameObject.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="615">
+          <caret line="71" column="17" lean-forward="true" selection-start-line="71" selection-start-column="17" selection-end-line="71" selection-end-column="17" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

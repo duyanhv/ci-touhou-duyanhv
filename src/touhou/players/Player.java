@@ -3,6 +3,7 @@ package touhou.players;
 import bases.GameObject;
 import bases.Utils;
 import bases.Vector2D;
+import bases.physics.BoxCollider;
 import touhou.enemies.Enemy;
 
 import java.awt.event.KeyEvent;
@@ -14,9 +15,9 @@ import static java.awt.event.KeyEvent.VK_X;
  */
 public class Player extends GameObject{
 //    BufferedImage image;
-    Utils utils = new Utils();
-    Enemy enemy = new Enemy();
-
+//    Utils utils = new Utils();
+//    Enemy enemy = new Enemy();
+      public BoxCollider boxCollider;
 //    public int x =  182;
 //    public int y = 500;
 
@@ -40,6 +41,7 @@ public class Player extends GameObject{
     public Player(){
 //        x = 182;
 //        y = 500;
+        boxCollider = new BoxCollider(32,48);
         position.set(182,500);
         image = Utils.loadImage("assets/images/players/straight/0.png");
 
@@ -112,8 +114,12 @@ public class Player extends GameObject{
         move();
         shoot();
 
+        boxCollider.position.set(this.position);
 
+    }
 
+    public void getHit(){
+        isActive = false;
     }
 
     Vector2D velocity = new Vector2D();

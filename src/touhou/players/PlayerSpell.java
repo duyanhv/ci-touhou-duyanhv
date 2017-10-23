@@ -2,7 +2,6 @@ package touhou.players;
 
 import bases.GameObject;
 import bases.Utils;
-import bases.Vector2D;
 import bases.physics.BoxCollider;
 import touhou.enemies.Enemy;
 
@@ -59,7 +58,7 @@ public class PlayerSpell extends GameObject{
 
         boxCollider.position.set(this.position);
 
-        Enemy enemy = GameObject.collideWith(this.boxCollider);
+        Enemy enemy = GameObject.collideWithE(this.boxCollider);
 
         if(enemy != null){
             enemy.getHit();

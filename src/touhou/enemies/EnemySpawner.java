@@ -19,6 +19,8 @@ public class EnemySpawner extends GameObject {
             frameCounter.reset();
             spawn();
         }
+
+
     }
 
     private void spawn() {
