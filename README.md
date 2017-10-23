@@ -1,3 +1,5 @@
+23/10/2017 - Added touhou-4
+
 20/10/2017 - Added touhou-3
 
 16/10/2017 - Added touhou-2
