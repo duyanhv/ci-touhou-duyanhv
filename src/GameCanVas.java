@@ -98,20 +98,20 @@ public class GameCanVas extends JPanel{
         repaint();
     }
 
-    public void keyPressed(KeyEvent e){
-        player.keyPressed(e);
+//    public void keyPressed(KeyEvent e){
+//        player.keyPressed(e);
+//
+//
+//
+////        playerSpell.KeyPressed(e);
+//    }
 
-
-
-//        playerSpell.KeyPressed(e);
-    }
-
-    public void keyReleased(KeyEvent e){
-        player.keyReleased(e);
-
-
-//        playerSpell.KeyReleased(e);
-    }
+//    public void keyReleased(KeyEvent e){
+//        player.keyReleased(e);
+//
+//
+////        playerSpell.KeyReleased(e);
+//    }
 
     public void run(){
 //        player.run();

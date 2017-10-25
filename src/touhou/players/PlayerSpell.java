@@ -58,10 +58,18 @@ public class PlayerSpell extends GameObject{
 
         boxCollider.position.set(this.position);
 
-        Enemy enemy = GameObject.collideWithE(this.boxCollider);
+        Enemy enemy = GameObject.collideWith(this.boxCollider,Enemy.class);
 
         if(enemy != null){
             enemy.getHit();
+            this.isActive = false;
+        }
+
+        deactiveIfNeeded();
+    }
+
+    private void deactiveIfNeeded() {
+        if(position.y < 0){
             this.isActive = false;
         }
     }

@@ -3,6 +3,7 @@ package touhou.enemies;
 import bases.GameObject;
 import bases.Utils;
 import bases.physics.BoxCollider;
+import bases.physics.PhysicsBody;
 
 import javax.swing.*;
 import java.util.Random;
@@ -10,9 +11,11 @@ import java.util.Random;
 /**
  * Created by duyanh on 10/16/17.
  */
-public class Enemy extends GameObject{
+public class Enemy extends GameObject implements PhysicsBody{
 
     public BoxCollider boxCollider;
+
+//    PlayerDamage playerDamage;
 //    BufferedImage image;
     long lastTurn = System.currentTimeMillis();
 
@@ -20,7 +23,7 @@ public class Enemy extends GameObject{
 
 
     boolean spellDisabled;
-    final int COOL_DOWN_TIME = 30;
+    final int COOL_DOWN_TIME = 40;
     int coolDownCount;
 
 
@@ -30,6 +33,8 @@ public class Enemy extends GameObject{
 
         image = Utils.loadImage("assets/images/enemies/level0/black/0.png");
         spellDisabled = false;
+
+//        this.playerDamage = new PlayerDamage();
     }
 
 
@@ -39,8 +44,11 @@ public class Enemy extends GameObject{
         shoot();
 
         boxCollider.position.set(this.position);
+//        this.playerDamage.run(this);
 
     }
+
+
 
     private void shoot() {
         if(spellDisabled){
@@ -73,6 +81,11 @@ public class Enemy extends GameObject{
         isActive = false;
     }
 
+    @Override
+    public BoxCollider getBoxCollider() {
+        return boxCollider;
+    }
+
 //    public void render(Graphics g){
 //        g.drawImage(image,x,y, null);
 //    }
@@ -90,4 +103,5 @@ public class Enemy extends GameObject{
 //            e.printStackTrace();
 //        }
     }
+
 
