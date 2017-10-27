@@ -2,8 +2,10 @@ package touhou.enemies;
 
 import bases.GameObject;
 import bases.Utils;
+import bases.Vector2D;
 import bases.physics.BoxCollider;
 import bases.physics.PhysicsBody;
+import touhou.players.Player;
 
 import javax.swing.*;
 import java.util.Random;
@@ -14,17 +16,18 @@ import java.util.Random;
 public class Enemy extends GameObject implements PhysicsBody{
 
     public BoxCollider boxCollider;
-
+    EnemyCastSpell enemyCastSpell;
 //    PlayerDamage playerDamage;
 //    BufferedImage image;
+    Vector2D velocity;
+    Player player;
     long lastTurn = System.currentTimeMillis();
 
     final int SPEED = 1 ;
 
 
-    boolean spellDisabled;
-    final int COOL_DOWN_TIME = 40;
-    int coolDownCount;
+
+
 
 
 
@@ -32,17 +35,21 @@ public class Enemy extends GameObject implements PhysicsBody{
         boxCollider = new BoxCollider(30,30);
 
         image = Utils.loadImage("assets/images/enemies/level0/black/0.png");
-        spellDisabled = false;
 
+        enemyCastSpell = new EnemyCastSpell();
+
+        player = new Player();
 //        this.playerDamage = new PlayerDamage();
+        velocity = new Vector2D();
+        velocity.set(0,0);
     }
 
 
 
     public void run(){
         move();
-        shoot();
-
+//        shoot();
+        enemyCastSpell.run(this);
         boxCollider.position.set(this.position);
 //        this.playerDamage.run(this);
 
@@ -50,30 +57,54 @@ public class Enemy extends GameObject implements PhysicsBody{
 
 
 
-    private void shoot() {
-        if(spellDisabled){
-            coolDownCount++;
-            if(coolDownCount >= COOL_DOWN_TIME){
-                spellDisabled = false;
-                coolDownCount = 0;
-
-            }
-            return;
-        }
-
-        if(coolDownCount < 1){
-            EnemiesSpell enemiesSpell = new EnemiesSpell();
-//            enemiesSpell.x = x + 5;
+//    private void shoot() {
+//        if(spellDisabled){
+//            coolDownCount++;
+//            if(coolDownCount >= COOL_DOWN_TIME){
+//                spellDisabled = false;
+//                coolDownCount = 0;
 //
-//            enemiesSpell.y = y + 50;
-            enemiesSpell.position.set(position.x, position.y);
-            GameObject.add(enemiesSpell);
-            spellDisabled = true;
-        }
-    }
+//            }
+//            return;
+//        }
+//
+//        if(coolDownCount < 1){
+//            EnemiesSpell enemiesSpell = new EnemiesSpell();
+////            enemiesSpell.x = x + 5;
+////
+////            enemiesSpell.y = y + 50;
+//            enemiesSpell.position.set(position.x, position.y);
+//            GameObject.add(enemiesSpell);
+//            spellDisabled = true;
+//        }
+//    }
 
     private void move() {
-        position.addUp(0, SPEED);
+
+
+
+
+//        this.position.addUp(player.position.x - this.position.x * SPEED / (player.position.length() - this.position.length())  ,
+//          player.position.y - this.position.y * this.position.x * SPEED / (player.position.length() - this.position.length()));
+//          velocity = player.position.subtract(this.position);
+//        velocity.normalize();
+////        velocity.print();
+//        velocity.mutiply(SPEED);
+//        this.position.addUp(velocity);
+
+        if(player.position.x > this.position.x){
+            this.position.x ++;
+        }else{
+            this.position.x --;
+        }
+
+        if(player.position.y > this.position.y){
+            this.position.y ++;
+        }else{
+            this.position.y --;
+        }
+
+
     }
 
 
